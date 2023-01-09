@@ -6,15 +6,19 @@
   </div>
 
   <TheSignUpComponent />
+
+  <!-- Featured Article -->
+  <TheFeaturedArticle />
 </template>
 
 <script>
 // @ is an alias to /src
 import TheSignUpComponent from '@/components/TheSignUpComponent.vue';
+import TheFeaturedArticle from '@/components/TheFeaturedArticle.vue';
 
 export default {
   name: 'HomeView',
-  components: { TheSignUpComponent }
+  components: { TheSignUpComponent, TheFeaturedArticle }
 }
 </script>
 

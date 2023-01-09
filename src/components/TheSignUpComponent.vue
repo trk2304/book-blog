@@ -28,6 +28,7 @@ export default {
     },
 
     methods: {
+        // This method will eventually post this to some data store that would send intermittent updates to users.
         handleEmail() {
             console.log("Hello world, the entered value was " + this.enteredEmail);
             this.enteredEmail = '';
@@ -39,7 +40,8 @@ export default {
 <style scoped>
 
 .newsletter-section {
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: center;

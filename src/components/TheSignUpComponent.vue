@@ -45,6 +45,8 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .sign-up-text,

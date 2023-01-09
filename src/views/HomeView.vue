@@ -27,6 +27,8 @@ export default {
   background-size: cover;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .hero-text {

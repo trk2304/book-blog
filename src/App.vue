@@ -33,6 +33,8 @@ nav {
   justify-content: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  width: 80%;
+  margin: 0 auto;
 }
 
 nav a:first-child {

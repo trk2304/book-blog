@@ -2,7 +2,7 @@
   <nav>
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
-    <router-link to="/articles">Articles</router-link>
+    <a href="https://www.linkedin.com/in/titus-kilpatrick-a5207b188/" target="_blank">LinkedIn</a>
   </nav>
   <router-view/>
 </template>

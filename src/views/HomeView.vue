@@ -8,7 +8,7 @@
   <TheSignUpComponent />
 
   <!-- Featured Article -->
-  <TheFeaturedArticle />
+  <TheFeaturedArticle class="featured-article-section" />
 </template>
 
 <script>
@@ -55,4 +55,7 @@ export default {
   font-family: Roboto;
 }
 
+.featured-article-section {
+  margin-top: 5rem;
+}
 </style>

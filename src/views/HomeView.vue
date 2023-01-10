@@ -27,7 +27,7 @@ export default {
   background-size: cover;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
 }
 

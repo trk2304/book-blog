@@ -33,7 +33,7 @@ nav {
   justify-content: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
 }
 

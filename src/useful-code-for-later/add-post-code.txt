@@ -1,0 +1,66 @@
+import { collection, addDoc } from 'firebase/firestore';
+import db from '../firebaseInit';
+
+
+export default {
+    data() {
+        return {
+            db: db
+        }
+    }
+}
+
+<!-- Delete Later. Only using for testing -->
+  <div class="new-article-form">
+    <form @submit.prevent="handleForm">
+
+      <label for="title">Title</label>
+      <input type="text" name="title" id='title' v-model="postTitle" />
+      
+      <label for="content">Content</label>
+      <textarea name="content" id="content" v-model="postContent" />
+      <BaseButton text="Add Post"></BaseButton>
+    </form>
+  </div>
+
+  async handleForm() {
+      
+      try {
+        const docRef = await addDoc(collection(this.db, 'posts'), {
+        title: this.postTitle,
+        content: this.postContent,
+        date: new Date().toDateString()
+        })
+
+        console.log(`New document added with id: ${docRef.id}`);
+        this.postTitle = this.postContent = '';
+      }
+      catch(error) {
+        console.error(error);
+      }
+    }
+
+    
+/* Everything below this comment regarding the form should be deleted later. */
+.new-article-form {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.new-article-form>form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+.new-article-form input,
+.new-article-form textarea {
+  margin-bottom: 1rem;
+}
+
+.new-article-form label {
+  text-align: left;
+}

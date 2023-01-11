@@ -16,9 +16,16 @@
 import TheSignUpComponent from '@/components/TheSignUpComponent.vue';
 import TheFeaturedArticle from '@/components/TheFeaturedArticle.vue';
 
+
 export default {
   name: 'HomeView',
-  components: { TheSignUpComponent, TheFeaturedArticle }
+  components: { TheSignUpComponent, TheFeaturedArticle },
+  data() {
+    return {
+      postTitle: '',
+      postContent: '',
+    }
+  }
 }
 </script>
 

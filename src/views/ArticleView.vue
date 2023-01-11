@@ -1,5 +1,5 @@
 <template>
-    <div class="article-container">
+    <div class="article-container" v-if="title !== '' && content !== ''">
         <h1 class="title">{{title}}</h1>
         <p class="date">{{date}}</p>
         <p class="content">{{content}}</p>

@@ -57,6 +57,8 @@ export default {
 
 .sign-up-text {
     border-right: 1px solid black;
+    font-family: 'Times New Roman', Serif;
+    font-size: 21px;
 }
 
 .sign-up-action {

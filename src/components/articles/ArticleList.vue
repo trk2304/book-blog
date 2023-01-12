@@ -2,7 +2,7 @@
 
     <div v-if="!(articles.length <= 0)">
         <!-- Figure out how to access the document's id. -->
-        <ul v-for="article in articles" :key="article.title" class="article-container">
+        <ul v-for="article in articles" :key="article.id" class="article-container">
             <ArticleListItem 
             :title="article.title"
             :content="article.content"

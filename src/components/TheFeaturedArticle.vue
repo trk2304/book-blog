@@ -3,7 +3,7 @@
         <BaseBigCard 
         big-card-title="I am a big card"
         big-card-text="This is big card text."
-        image-link="https://picsum.photos/id/237/200/300"
+        image-link="https://picsum.photos/seed/rand/600/600"
         :date="date"
         class="featured-article"
         >
@@ -29,7 +29,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-</style>

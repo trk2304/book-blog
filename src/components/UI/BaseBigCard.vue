@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <!-- Make sure that the src attribute is dynamic eventually using ':' -->
-        <router-link to="/about">    
+        <router-link :to="'/article/' + id">    
             <img :src="imageLink" alt="" class="thumbnail">
 
         
@@ -24,7 +24,8 @@ export default {
         bigCardTitle: String,
         bigCardText: String,
         imageLink: String,
-        date: String
+        date: String,
+        id: String
     }
 }
 </script>

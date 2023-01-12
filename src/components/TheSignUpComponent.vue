@@ -16,6 +16,8 @@
 
 <script>
 import BaseButton from '@/components/UI/BaseButton.vue';
+import db from '@/firebaseInit';
+import { collection, addDoc } from '@firebase/firestore';
 
 export default {
     components: { BaseButton },
@@ -23,15 +25,35 @@ export default {
     data() {
         return {
             enteredEmail: '',
-            test: false
+            invalidInput: false
         }
     },
 
     methods: {
         // This method will eventually post this to some data store that would send intermittent updates to users.
-        handleEmail() {
-            console.log("Hello world, the entered value was " + this.enteredEmail);
+        async handleEmail() {
+
+            // Validate Input 
+            if(!this.enteredEmail.includes('@') || this.enteredEmail === '')
+                this.invalidInput = true;
+
+            // Pop Up if input is invalid.
+            if(this.invalidInput) {
+                alert('Sorry, but you did not enter a valid email address. Please try again.');
+                this.invalidInput = false;
+                return;
+            }
+
+            const docRef = await addDoc(collection(db, 'newsletter_emails'), {
+                email: this.enteredEmail
+            });
+
+            // Remove this later.
+            console.log(docRef);
+
+            alert('Congrats! You\'ve been added to our email list. Check your inbox daily for a newsletter update.');
             this.enteredEmail = '';
+            this.invalidInput = false;
         }
     }
 }

@@ -1,23 +1,21 @@
 <template>
 
-    <div v-if="!(articles.length <= 0)">
-        <!-- Figure out how to access the document's id. -->
-        <ul v-for="article in articles" :key="article.id" class="article-container">
-            <ArticleListItem 
-            :title="article.title"
-            :content="article.content"
-            :date="article.date"
-            :id="article.id"
-            >
+    <!-- Figure out how to access the document's id. -->
+    <ul class="article-container" v-if="!(articles.length <= 0)">
+        <ArticleListItem 
+        v-for="article in articles" :key="article.id"
+        :title="article.title"
+        :content="article.content"
+        :date="article.date"
+        :id="article.id"
+        >
 
-            </ArticleListItem>
-        </ul>
-    </div>
+        </ArticleListItem>
+    </ul>
     
-        
-
     <!-- Be aware that this is not the only case for an empty list. Be sure to account for errors in the future -->
     <p v-else>Loading...</p>
+
 </template>
 
 <script>
@@ -52,8 +50,12 @@ export default {
 <style scoped>
 ul.article-container {
     padding: 0;
-    width: 50%;
-    max-width: 600px;
+    width: 60%;
+    max-width: 1200px;
     margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
 }
 </style>

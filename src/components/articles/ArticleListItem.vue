@@ -1,7 +1,7 @@
 <template>
     <li>
         <BaseCard>
-            <img :src="'https://picsum.photos/seed/' + id + '/600/600'">
+            <img :src="'https://picsum.photos/seed/' + id + '/1600/900'">
             
             <div class="article-item-content">
                 <h3 class="article-title">{{ title }}</h3>

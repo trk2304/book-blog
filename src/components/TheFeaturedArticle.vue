@@ -4,7 +4,7 @@
         :big-card-title="featuredArticle.title"
         :big-card-text="featuredArticle.content"
         :id="articleId"
-        image-link="https://picsum.photos/seed/rand/600/600"
+        image-link="https://picsum.photos/seed/rand/1600/900"
         :date="featuredArticle.date"
         class="featured-article"
         >
@@ -34,7 +34,7 @@ export default {
     },
 
     // Grab the most recent article and its respective information. Don't worry about images yet.
-    async beforeMount() {
+    async created() {
         const postsRef = collection(db, 'posts');
         const q = query(postsRef, orderBy("date", "desc"), limit(1));
 

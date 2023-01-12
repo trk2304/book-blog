@@ -6,9 +6,10 @@
 
         <div class="sign-up-action">
             <div class="flex-item-wrapper">
-                <form @submit.prevent="handleEmail"></form>
-                <input type="email" name="email" id="email" placeholder="Email Address..." v-model="enteredEmail" required>
-                <BaseButton text="Submit" @click="handleEmail"></BaseButton>
+                <form @submit.prevent="handleEmail">
+                    <input type="email" name="email" id="email" placeholder="Email Address..." v-model="enteredEmail" required>
+                    <BaseButton text="Subscribe"></BaseButton>
+                </form>
             </div>
         </div>
     </div>
@@ -86,8 +87,11 @@ export default {
 .sign-up-action {
     display: flex;
     justify-content: center;
-    
     align-items: center;
+}
+
+form {
+    display: flex;
 }
 
 .sign-up-action input {
@@ -95,9 +99,11 @@ export default {
     border-left: none;
     border-right: none;
     border-bottom: 1px solid lightskyblue;
-    font-size: 16px;
+    padding-bottom: 8px;
+    font-size: 18px;
     margin-right: 2rem;
     transition: 250ms ease-in-out all;
+    margin-top: auto;
 }
 
 .sign-up-action input:focus {

@@ -35,14 +35,18 @@ export default {
 
     // Grab all articles before mounting this component.
     // Put each article in the stored articles array.
-    async beforeMount() {
-        const articleSnapshot = await getDocs(collection(db, 'posts'));
-        articleSnapshot.forEach( (doc) => {
+    async created() {
+        try {
+            const articleSnapshot = await getDocs(collection(db, 'posts'));
+            articleSnapshot.forEach( (doc) => {
             let obj = doc.data();
             obj.id = doc.id;
             this.articles.push(obj);
-        });
-
+            });
+        }
+        catch (error) {
+            console.error(error);
+        }
     }
 }
 </script>

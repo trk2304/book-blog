@@ -49,6 +49,7 @@ export default {
 
 img {
     width: 80%;
+    max-width: 1200px;
     position: relative;
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <div class="hero-text">    
-      <h1 class="hero-heading">Shelf Life.</h1>
+      <h1 class="hero-heading">The Shelf Life</h1>
     </div>
   </div>
 
@@ -40,7 +40,7 @@ export default {
 .hero {
   background-size: cover;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   width: 95%;
   margin: 0 auto;
 }
@@ -55,7 +55,7 @@ export default {
 }
 
 .hero-heading {
-  font-size: 62px;
+  font-size: 100px;
   font-family: 'Times New Roman', Times, serif;
   letter-spacing: 2px;
 }
@@ -65,7 +65,7 @@ export default {
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 5px;
-  font-size: 28px;
+  font-size: 21px;
   display: block;
   margin-bottom: 1rem;
   font-family: Roboto;

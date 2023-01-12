@@ -34,9 +34,14 @@ li {
 }
 
 .article-item-content {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     margin: 0;
     text-align: left;
+}
+
+.article-title {
+    margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
 }
 
 .article-link {

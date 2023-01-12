@@ -44,7 +44,7 @@ export default {
 .wrapper::before {
     content: 'Featured Post';
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 6px;
     font-size: 21px;
     border: 1px solid black;
     width: 50%;

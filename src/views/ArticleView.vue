@@ -1,17 +1,29 @@
 <template>
-    <img :src="'https://picsum.photos/seed/' + $route.params.id + '/1600/900'">
+
+    <TheHero />
+
+    <span class="section-divider"></span>
+
+    
     <div class="article-container" v-if="title !== '' && content !== ''">
-        <h1 class="title">{{title}}</h1>
         <p class="date">{{date}}</p>
+        <h1 class="title">{{title}}</h1>
+        
+        <div class="image-container">
+            <img :src="'https://picsum.photos/seed/' + $route.params.id + '/1600/900'">
+        </div>
+
         <p class="content">{{content}}</p>
     </div>
 </template>
 
 <script>
+import TheHero from '@/components/TheHero.vue';
 import { doc, getDoc } from 'firebase/firestore';
 import  db  from '../firebaseInit';
 
 export default {
+    components: { TheHero },
     data() {
         return {
             title: '',
@@ -40,25 +52,50 @@ export default {
 .article-container {
     width: 80%;
     max-width: 1200px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border: 1px solid black;
     padding: 1rem 3rem;
     margin: 2rem auto;
     text-align: left;
 }
 
-img {
+.article-container .content,
+.article-container .title {
     width: 80%;
     max-width: 1200px;
-    position: relative;
+    margin: 1rem auto;
 }
 
-img::before {
-    content: 'Blog Post';
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: white;
-    z-index: 80;
+.date {
+    font-weight: 300;
+    font-size: 14px;
+    display: block;
+    width: 80%;
+    max-width: 1200px;
+    margin: 1rem auto;
+}
+
+.content {
+    font-size: 18px;
+    margin-top: 3rem;
+}
+
+.image-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+img {
+    object-fit: contain;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.section-divider {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    border-top: 1px solid black;
+    background-color: black;
 }
 </style>

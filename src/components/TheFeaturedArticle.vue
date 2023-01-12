@@ -4,7 +4,7 @@
         :big-card-title="featuredArticle.title"
         :big-card-text="featuredArticle.content"
         :id="articleId"
-        image-link="https://picsum.photos/seed/rand/1600/900"
+        :image-link="'https://picsum.photos/seed/' + articleId + '/1600/900'"
         :date="featuredArticle.date"
         class="featured-article"
         >

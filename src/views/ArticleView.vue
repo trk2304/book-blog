@@ -13,7 +13,7 @@
             <img :src="'https://picsum.photos/seed/' + $route.params.id + '/1600/900'">
         </div>
 
-        <p class="content">{{content}}</p>
+        <div class="content" ref="contentElement" v-html="content"></div>
     </div>
 </template>
 
@@ -22,6 +22,8 @@ import TheHero from '@/components/TheHero.vue';
 import { doc, getDoc } from 'firebase/firestore';
 import  db  from '../firebaseInit';
 
+
+
 export default {
     components: { TheHero },
     data() {
@@ -29,7 +31,6 @@ export default {
             title: '',
             date: '',
             content: '',
-            db: db
         }
     },
 
@@ -39,7 +40,7 @@ export default {
             let docSnapshot = await getDoc(docRef);
             this.title = docSnapshot.data().title;
             this.date = docSnapshot.data().date;
-            this.content= docSnapshot.data().content;
+            this.content = docSnapshot.data().content;
         }
         catch(error) {
             console.error(error);
@@ -75,7 +76,6 @@ export default {
 }
 
 .content {
-    font-size: 18px;
     margin-top: 3rem;
 }
 

@@ -5,13 +5,9 @@
     <td>{{post.date}}</td>
     <td>{{post.content}}</td>
     <td>
-    
         <BaseButton text="Delete Post" @click="handleClick('delete', post.id)"></BaseButton> 
-        
         <BaseButton text="Edit Post" @click="handleClick('edit', post.id)"></BaseButton> 
-        
         <BaseButton text="View" @click="handleClick('view', post.id)"></BaseButton>
-        
     </td>
 </template>
 

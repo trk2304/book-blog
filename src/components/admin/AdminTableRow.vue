@@ -3,7 +3,7 @@
     <td>{{post.id}}</td>
     <td>{{post.title}}</td>
     <td>{{post.date}}</td>
-    <td>{{post.content}}</td>
+    <td>{{showStrippedContent}}</td>
     <td>
         <BaseButton text="Delete Post" @click="handleClick('delete', post.id)"></BaseButton> 
         <BaseButton text="Edit Post" @click="handleClick('edit', post.id)"></BaseButton> 
@@ -19,11 +19,21 @@ export default {
         post: Object
     },
     emits: ['button-clicked'],
+    data() {
+        return {
+            tagStrippedContent: this.post.content
+        }
+    },
     methods: {
         handleClick(buttonType, id) {
             this.$emit('button-clicked', buttonType, id);
         }
         
+    },
+    computed: {
+        showStrippedContent() {
+            return this.tagStrippedContent.replace(/<(.|\n)*?>/g, '');
+        }
     }
 }
 </script>

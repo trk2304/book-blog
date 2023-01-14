@@ -40,10 +40,11 @@ export default {
 
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach( (document) => {
-            console.log(document.data());
-
             this.featuredArticle = document.data();
             this.articleId = document.id;
+
+            // I had to place the tag-stripping expression here and not in the BaseBigCard component because this asynchronous operation made it impossible to access the data from there.
+            this.featuredArticle.content = this.featuredArticle.content.replace(/<(.|\n)*?>/g, '');
         })
     }
 }

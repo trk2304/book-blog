@@ -6,7 +6,7 @@
             <div class="article-item-content">
                 <h3 class="article-title">{{ title }}</h3>
                 <p class="article-date">{{ date }}</p>
-                <p class="article-preview-text">{{ content }}</p>
+                <p class="article-preview-text">{{ showStrippedContent }}</p>
                 <router-link :to="'/article/'+ id" class="article-link">Read More...</router-link>
             </div>
             
@@ -25,6 +25,11 @@ export default {
         id: String
     },
     components: { BaseCard },
+    computed: {
+        showStrippedContent() {
+            return this.content.replace(/<(.|\n)*?>/g, '')
+        }
+    }
 }
 </script>
 
@@ -37,6 +42,11 @@ li {
     padding: 0.5rem 1rem;
     margin: 0;
     text-align: left;
+}
+
+.article-preview-text {
+    max-height: 150px;
+    overflow-y: hidden;
 }
 
 .article-title {

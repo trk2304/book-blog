@@ -9,7 +9,6 @@
         :date="article.date"
         :id="article.id"
         >
-
         </ArticleListItem>
     </ul>
     

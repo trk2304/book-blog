@@ -15,7 +15,7 @@
             <form class="add-post-form">
                 <div class="form-control">
                     <label for="title">Title</label>
-                    <input type="text" name="title" id="title" placeholder="Post Title" v-model="newPostTitle">
+                    <input type="text" name="title" id="title" placeholder="Post Title" v-model="newPostTitle" required>
                 </div>
 
                 <div class="form-control">
@@ -24,6 +24,7 @@
                     <editor
                         api-key="qqp7tw1f6mpzzd58de4yvwi6iyin9fcwysfspsn7e547xb0a"
                         v-model="newPostContent"
+                        required
                         :init="{
                             height: 500,
                             menubar: false,

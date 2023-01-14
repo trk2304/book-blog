@@ -59,6 +59,11 @@ export default {
     padding: 0.5rem 1rem;
 }
 
+.big-card-text {
+    max-height: 100px;
+    overflow-y: hidden;
+}
+
 .big-card-title,
 .big-card-text,
 .big-card-date {
